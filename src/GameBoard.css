@@ -1,0 +1,59 @@
+#category-container {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 50px);
+  grid-template-columns: repeat(auto-fit, 150px);
+  grid-gap: 10px;
+  padding: 5px 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  justify-content: center;
+  text-align: center;
+  font-weight: bolder;
+}
+
+#word-container {
+  display: flex;
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.separator {
+  margin: 15px auto;
+  max-width: 900px;
+}
+
+#stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
+  justify-content: center;
+  grid-gap: 15px;
+  margin: 10px auto;
+  max-width: 900px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#stats-container > p {
+  margin: 3px 5px;
+}
+
+#dynamic-elements-container {
+  min-height: 200px;
+}
+
+#word-count-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+#category-header-container {
+  max-width: 100px;
+  margin: 20px auto;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+}
