@@ -1,5 +1,6 @@
 {
   "name": "hangman",
+  "homepage": "https://rahul-kabra.github.io/hangman",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
