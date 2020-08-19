@@ -1,0 +1,42 @@
+.category {
+  margin: 0 5px;
+  border: 3px solid #333;
+  padding: 10px;
+  background: #476e81;
+  border-radius: 5px;
+  color: aliceblue;
+  height: 50px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.category:hover {
+  background: #8bc3e5;
+}
+
+.single-category {
+  cursor: pointer;
+}
+
+.selected-category {
+  background: orange;
+  color: #770737;
+}
+
+.completed-category {
+  background: #e2df45 !important;
+  color: #644566;
+  pointer-events: none;
+}
+
+/*.disabled {
+  pointer-events: none;
+}
+
+#category-container > div:not(.selected-category) {
+  pointer-events: none;
+}
+
+#category-container > div:not(.completed-category) {
+  pointer-events: auto;
+}*/

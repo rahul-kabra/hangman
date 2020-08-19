@@ -1,0 +1,18 @@
+.word-alphabet {
+  text-align: center;
+  margin: 2px;
+}
+
+.placeholder-label {
+  text-align: center;
+  font-weight: bold;
+  color: #8e5223;
+  font-size: 20px;
+}
+
+.placeholder-span {
+  display: block;
+  text-align: center;
+  border-bottom: 5px solid #687a76;
+  width: 20px;
+}
