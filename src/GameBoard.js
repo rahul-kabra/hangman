@@ -4,6 +4,7 @@ import "./GameBoard.css";
 import Category from "./Category.js";
 import Word from "./Word";
 import Alphabets from "./Alphabets";
+import GameEnd from "./GameEnd";
 
 import * as Constants from "./Constants";
 
@@ -394,6 +395,17 @@ class GameBoard extends React.Component {
               Total words remaining : {this.state.totalWordCount}
             </p>
           </div>
+        </div>
+        <div
+          style={
+            this.state.gameState === "end" &&
+            this.state.gameState !== "" &&
+            this.state.gameState !== "running"
+              ? { display: "block" }
+              : { display: "none" }
+          }
+        >
+          <GameEnd score={this.finalScore} startGame={this.startGame} />
         </div>
       </>
     );
