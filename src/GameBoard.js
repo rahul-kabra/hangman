@@ -16,7 +16,6 @@ class GameBoard extends React.Component {
       alphabetList: Constants.AlphabetsList,
       categoryList: Constants.CategoryList,
       selectedCategory: "",
-      prevSelectedCategory: "",
       categoryWords: "",
       randomWord: "",
       clickedAlphabets: [],
@@ -34,6 +33,7 @@ class GameBoard extends React.Component {
     this.completedCategory = [];
     this.randomNumber = 0;
     this.finalScore = 0;
+    this.clue = "";
 
     this.selectCategory = this.selectCategory.bind(this);
     this.randomWord = this.randomWord.bind(this);
@@ -64,7 +64,6 @@ class GameBoard extends React.Component {
       alphabetList: Constants.AlphabetsList,
       categoryList: Constants.CategoryList,
       selectedCategory: "",
-      prevSelectedCategory: "",
       categoryWords: "",
       randomWord: "",
       clickedAlphabets: [],
@@ -122,7 +121,6 @@ class GameBoard extends React.Component {
 
     this.setState({
       selectedCategory: category.split(" ")[0],
-      prevSelectedCategory: category.split(" ")[0],
       categoryWords: words,
       gameState: "running",
       categoryWordCount: words.length,
@@ -139,9 +137,11 @@ class GameBoard extends React.Component {
   }
 
   randomWord() {
-    var num = Math.floor(Math.random() * this.state.categoryWords.length);
-    var randomWord = this.state.categoryWords[num];
+    let num = Math.floor(Math.random() * this.state.categoryWords.length);
+    let word = this.state.categoryWords[num];
 
+    let randomWord = word.split("~")[0];
+    this.clue = word.split("~")[1];
     this.randomNumber = num;
 
     this.setState({
@@ -265,7 +265,6 @@ class GameBoard extends React.Component {
       this.setState({
         gameState: "end",
         selectedCategory: "",
-        prevSelectedCategory: "",
         categoryWords: "",
         randomWord: "",
         clickedAlphabets: [],
@@ -337,13 +336,18 @@ class GameBoard extends React.Component {
               clickHandle={this.selectCategory}
             />
           </div>
-          <p style={{ textAlign: "center" }}>
+          <p style={{ textAlign: "center", margin: "2px" }}>
             {this.state.gameState !== "" && this.state.selectedCategory !== ""
               ? `Selected category is ${
                   this.state.selectedCategory +
                   Constants.getEmoji(this.state.selectedCategory)
                 }`
               : `Please select a category to proceed.`}
+          </p>
+          <p style={{ textAlign: "center", margin: "5px", fontWeight: "bold" }}>
+            {this.state.gameState !== "" && this.state.selectedCategory !== ""
+              ? `Clue : ${this.clue}`
+              : ``}
           </p>
           <div className="separator">
             <hr style={{ color: "transparent" }} />

@@ -28,15 +28,3 @@
   color: #644566;
   pointer-events: none;
 }
-
-/*.disabled {
-  pointer-events: none;
-}
-
-#category-container > div:not(.selected-category) {
-  pointer-events: none;
-}
-
-#category-container > div:not(.completed-category) {
-  pointer-events: auto;
-}*/
