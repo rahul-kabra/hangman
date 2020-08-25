@@ -3,7 +3,6 @@ import "./GameEnd.css";
 
 class GameEnd extends React.Component {
   render() {
-    console.log(this.props.score);
     return (
       <>
         <div className="game-end-container">
